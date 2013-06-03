@@ -1,0 +1,30 @@
+<div class="search" data-ng-controller="SearchCtrl">
+    <div class="container">
+        <div class="inner">
+            <form class="form-search">
+                <input type="text" class="input-medium search-query" ng-model="searchType">
+                <button type="submit" class="btn" data-ng-click="onSubmit(searchType)">Search</button>
+                <select data-ng-model="search.age" ng-options="age.name for age in ages"></select>
+                <input ng-model="search.text">
+            </form>
+
+            <p>return {{resCnt}} annonces in {{resTime}}s</p>
+
+            <!--<form action="form.php" method="post">-->
+                <!--<input list="cars" name="cars" >-->
+                <!--<datalist id="cars">-->
+                    <!--<option value="Volvo">-->
+                    <!--<option value="BMW">-->
+                    <!--<option value="Bugatti">-->
+                    <!--<option value="Cadillac">-->
+                    <!--<option value="Chevrolet">-->
+                    <!--<option value="Chrysler">-->
+                <!--</datalist>-->
+                <!--<input type="submit" />-->
+            <!--</form>-->
+
+        </div>
+    </div>
+</div>
+</div>
+

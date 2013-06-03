@@ -1,0 +1,10 @@
+<div ng-controller="AnnoncesCtrl" class="annonces">
+    <ul>
+        <li ng-include="'partial/annonce.html'"
+            data-ng-animate="'repeat'"
+            ng-repeat="annonce in annonces | searchFilter:search" class="annonce"></li>
+    </ul>
+
+
+
+</div>
