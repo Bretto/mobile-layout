@@ -2,13 +2,16 @@
 <html ng-app="App">
 <head>
     <title></title>
+    <link rel='stylesheet' href='stylesheets/bootstrap.css'/>
     <link rel='stylesheet' href='stylesheets/screen.css'/>
 </head>
 <body>
-<div class="wrap">
+<div class="wrap" data-ng-controller="MainCtrl">
     <section class="navigation">
         <header>
-            <p>Title</p>
+            <div class="inner">
+                <h1>Title</h1>
+            </div>
         </header>
         <div class="content">
             <ul>
@@ -22,9 +25,17 @@
         </div>
 
     </section>
-    <section class="main">
+    <section class="main" ng-class="{minimized:dataModel.toggleViewOpen}">
         <header>
-            <p>Title</p>
+            <div class="inner">
+                <button type="button" data-ng-click="dataModel.toggleViewOpen=!dataModel.toggleViewOpen" class="btn btn-inverse toggle-view-btn pull-left" ng-class="{active:dataModel.toggleViewOpen}">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1>Title</h1>
+            </div>
+
         </header>
         <div class="content">
             <p>hello world</p>

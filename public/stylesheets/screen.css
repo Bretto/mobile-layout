@@ -2,6 +2,13 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 4, ../sass/base.scss */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /* iPads (landscape) ----------- */
 /* iPads (portrait) ----------- */
 /* line 36, ../sass/screen.scss */
@@ -9,7 +16,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: blue;
+  color: #808080;
 }
 
 /* line 45, ../sass/screen.scss */
@@ -26,6 +33,11 @@ html, body {
   bottom: 0;
   border: 1px solid red;
 }
+/* line 58, ../sass/screen.scss */
+.navigation .content {
+  background: #eee;
+  height: 100%;
+}
 @media only screen and (orientation: landscape) {
   /* line 51, ../sass/screen.scss */
   .navigation {
@@ -38,39 +50,108 @@ html, body {
     display: none;
   }
 }
-/* line 67, ../sass/screen.scss */
+/* line 71, ../sass/screen.scss */
 .navigation header {
   height: 40px;
   position: relative;
   width: 100%;
-  border: 1px solid red;
+  border-top: 1px solid #CDD5DF;
+  border-bottom: 1px solid #2d3642;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#b0bccd), color-stop(0.5, #889bb3), color-stop(0.5, #8195af), to(#6d84a2));
+}
+/* line 79, ../sass/screen.scss */
+.navigation header .inner {
+  padding: 3px;
+}
+/* line 83, ../sass/screen.scss */
+.navigation header h1 {
+  color: #ffffff;
+  font-size: 17px;
+  text-align: center;
+  line-height: 33px;
+  margin: 0;
 }
 
-/* line 75, ../sass/screen.scss */
+/* line 93, ../sass/screen.scss */
 .main {
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  -webkit-transition-property: margin-left;
+  -moz-transition-property: margin-left;
+  -o-transition-property: margin-left;
+  transition-property: margin-left;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
   border: 1px solid blue;
 }
+/* line 106, ../sass/screen.scss */
+.main .content {
+  background: #fff;
+  height: 100%;
+}
 @media only screen and (orientation: landscape) {
-  /* line 75, ../sass/screen.scss */
-  .main {
+  /* line 116, ../sass/screen.scss */
+  .main.minimized {
     margin-left: 250px;
   }
 }
 @media only screen and (orientation: portrait) {
-  /* line 75, ../sass/screen.scss */
+  /* line 93, ../sass/screen.scss */
   .main {
     margin-left: 0;
   }
 }
-/* line 94, ../sass/screen.scss */
+/* line 125, ../sass/screen.scss */
 .main header {
   height: 40px;
   position: relative;
   width: 100%;
-  border: 1px solid blue;
+  border-top: 1px solid #CDD5DF;
+  border-bottom: 1px solid #2d3642;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#b0bccd), color-stop(0.5, #889bb3), color-stop(0.5, #8195af), to(#6d84a2));
+}
+/* line 133, ../sass/screen.scss */
+.main header h1 {
+  color: #ffffff;
+  font-size: 17px;
+  text-align: center;
+  line-height: 33px;
+  margin: 0;
+}
+/* line 141, ../sass/screen.scss */
+.main header .inner {
+  padding: 3px;
+}
+
+/* line 149, ../sass/screen.scss */
+.toggle-view-btn {
+  height: 30px;
+  padding: 7px;
+}
+/* line 153, ../sass/screen.scss */
+.toggle-view-btn.active {
+  background: red;
+}
+/* line 157, ../sass/screen.scss */
+.toggle-view-btn .icon-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 2px;
+  background-color: #f5f5f5;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
 }
