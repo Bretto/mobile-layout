@@ -2,7 +2,9 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 8, ../sass/screen.scss */
+/* iPads (landscape) ----------- */
+/* iPads (portrait) ----------- */
+/* line 36, ../sass/screen.scss */
 html, body {
   margin: 0;
   padding: 0;
@@ -10,28 +12,65 @@ html, body {
   color: blue;
 }
 
-/* line 15, ../sass/screen.scss */
+/* line 45, ../sass/screen.scss */
 .wrap {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-/* line 21, ../sass/screen.scss */
+/* line 51, ../sass/screen.scss */
 .navigation {
-  width: 350px;
-  display: inline-block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  border: 1px solid red;
+}
+@media only screen and (orientation: landscape) {
+  /* line 51, ../sass/screen.scss */
+  .navigation {
+    width: 250px;
+  }
+}
+@media only screen and (orientation: portrait) {
+  /* line 51, ../sass/screen.scss */
+  .navigation {
+    display: none;
+  }
+}
+/* line 67, ../sass/screen.scss */
+.navigation header {
+  height: 40px;
+  position: relative;
+  width: 100%;
   border: 1px solid red;
 }
 
-/* line 27, ../sass/screen.scss */
-.content {
-  position: relative;
-  width: 100%;
+/* line 75, ../sass/screen.scss */
+.main {
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  display: inline-block;
+  border: 1px solid blue;
+}
+@media only screen and (orientation: landscape) {
+  /* line 75, ../sass/screen.scss */
+  .main {
+    margin-left: 250px;
+  }
+}
+@media only screen and (orientation: portrait) {
+  /* line 75, ../sass/screen.scss */
+  .main {
+    margin-left: 0;
+  }
+}
+/* line 94, ../sass/screen.scss */
+.main header {
+  height: 40px;
+  position: relative;
+  width: 100%;
   border: 1px solid blue;
 }
