@@ -6,7 +6,7 @@ services.factory('DataModel', function ($http, $log, $rootScope, $routeParams, $
 
     var dataModel = {};
     dataModel.toggleViewOpen = true;
-
+    dataModel.pages
 
 
 

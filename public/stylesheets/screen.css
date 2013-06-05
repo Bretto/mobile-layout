@@ -28,42 +28,67 @@ html, body {
 
 /* line 51, ../sass/screen.scss */
 .navigation {
-  position: fixed;
+  background: #eee;
+  position: absolute;
   top: 0;
   bottom: 0;
-  border: 1px solid red;
+  width: 280px;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -ms-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -ms-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  z-index: 0;
 }
-/* line 58, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 .navigation .content {
-  background: #eee;
-  height: 100%;
-}
-@media only screen and (orientation: landscape) {
-  /* line 51, ../sass/screen.scss */
-  .navigation {
-    width: 250px;
-  }
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  margin-top: 40px;
+  position: absolute;
 }
 @media only screen and (orientation: portrait) {
   /* line 51, ../sass/screen.scss */
   .navigation {
+    z-index: 1;
     display: none;
+    top: 50px;
+    bottom: 50px;
+    left: 10px;
+  }
+  /* line 86, ../sass/screen.scss */
+  .navigation.active {
+    display: block;
+    -webkit-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
   }
 }
-/* line 71, ../sass/screen.scss */
+/* line 92, ../sass/screen.scss */
 .navigation header {
   height: 40px;
-  position: relative;
+  position: absolute;
   width: 100%;
   border-top: 1px solid #CDD5DF;
   border-bottom: 1px solid #2d3642;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#b0bccd), color-stop(0.5, #889bb3), color-stop(0.5, #8195af), to(#6d84a2));
 }
-/* line 79, ../sass/screen.scss */
+/* line 100, ../sass/screen.scss */
 .navigation header .inner {
   padding: 3px;
 }
-/* line 83, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 .navigation header h1 {
   color: #ffffff;
   font-size: 17px;
@@ -72,45 +97,50 @@ html, body {
   margin: 0;
 }
 
-/* line 93, ../sass/screen.scss */
+/* line 114, ../sass/screen.scss */
 .main {
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  -webkit-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
   -webkit-transition-property: margin-left;
   -moz-transition-property: margin-left;
+  -ms-transition-property: margin-left;
   -o-transition-property: margin-left;
   transition-property: margin-left;
   -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
+  -ms-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
   -webkit-transition-timing-function: ease-out;
   -moz-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
-  border: 1px solid blue;
 }
-/* line 106, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 .main .content {
   background: #fff;
   height: 100%;
 }
 @media only screen and (orientation: landscape) {
-  /* line 116, ../sass/screen.scss */
+  /* line 138, ../sass/screen.scss */
   .main.minimized {
-    margin-left: 250px;
+    margin-left: 280px;
   }
 }
 @media only screen and (orientation: portrait) {
-  /* line 93, ../sass/screen.scss */
+  /* line 114, ../sass/screen.scss */
   .main {
     margin-left: 0;
   }
 }
-/* line 125, ../sass/screen.scss */
+/* line 147, ../sass/screen.scss */
 .main header {
   height: 40px;
   position: relative;
@@ -119,7 +149,7 @@ html, body {
   border-bottom: 1px solid #2d3642;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#b0bccd), color-stop(0.5, #889bb3), color-stop(0.5, #8195af), to(#6d84a2));
 }
-/* line 133, ../sass/screen.scss */
+/* line 155, ../sass/screen.scss */
 .main header h1 {
   color: #ffffff;
   font-size: 17px;
@@ -127,21 +157,21 @@ html, body {
   line-height: 33px;
   margin: 0;
 }
-/* line 141, ../sass/screen.scss */
+/* line 163, ../sass/screen.scss */
 .main header .inner {
   padding: 3px;
 }
 
-/* line 149, ../sass/screen.scss */
+/* line 171, ../sass/screen.scss */
 .toggle-view-btn {
   height: 30px;
   padding: 7px;
 }
-/* line 153, ../sass/screen.scss */
+/* line 175, ../sass/screen.scss */
 .toggle-view-btn.active {
   background: red;
 }
-/* line 157, ../sass/screen.scss */
+/* line 179, ../sass/screen.scss */
 .toggle-view-btn .icon-bar {
   display: block;
   width: 18px;

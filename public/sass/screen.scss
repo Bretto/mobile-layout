@@ -40,7 +40,7 @@ html, body {
   color: #808080;
 }
 
-$navigation-width: 250px;
+$navigation-width: 280px;
 
 .wrap {
   position: absolute;
@@ -50,27 +50,48 @@ $navigation-width: 250px;
 
 .navigation {
 
-  position: fixed;
+  background: #eee;
+  position: absolute;
   top: 0;
   bottom: 0;
-  border: 1px solid red;
 
+  width: $navigation-width;
+
+  @include transition-property(opacity);
+  @include transition-duration(.5s);
+  @include transition-timing-function(ease-out);
+
+  z-index: 0;
+  
   .content{
-    background: #eee;
-    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    margin-top: 40px;
+    position: absolute;
   }
 
   @include respond-to(landscape) {
-     width: $navigation-width;
+
   }
 
   @include respond-to(portrait) {
+    z-index: 1;
     display: none;
+    top: 50px;
+    bottom: 50px;
+    left: 10px;
+
+
+    &.active{
+      display: block;
+      @include box-shadow(0 0 10px 5px rgba(#000,.2));
+    }
   }
 
   header{
     height: 40px;
-    position: relative;
+    position: absolute;
     width: 100%;
     border-top: 1px solid #CDD5DF;
     border-bottom: 1px solid #2d3642;
@@ -98,6 +119,8 @@ $navigation-width: 250px;
   left: 0;
   right: 0;
 
+  @include box-shadow(0 0 10px 5px rgba(#000,.2));
+
   @include transition-property(margin-left);
   @include transition-duration(.5s);
   @include transition-timing-function(ease-out);
@@ -109,7 +132,6 @@ $navigation-width: 250px;
   }
 
 
-  border: 1px solid blue;
 
   @include respond-to(landscape) {
 
