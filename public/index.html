@@ -14,9 +14,10 @@
             </div>
         </header>
         <div class="content">
-            <ul>
-                <li data-ng-repeat="page in dataModel.pages"><a href="#/page/{{$index+1}}">{{page.title}}</a></li>
-            </ul>
+            <div ng-include="'partials/pri-nav.html'"></div>
+            <!--<ul>-->
+                <!--<li data-ng-repeat="page in dataModel.pages"><a href="#/page/{{$index+1}}">{{page.title}}</a></li>-->
+            <!--</ul>-->
         </div>
     </section>
     <section class="main" ng-class="{minimized:dataModel.toggleViewOpen}">

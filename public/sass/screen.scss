@@ -42,7 +42,7 @@ html, body {
 
 $navigation-width: 280px;
 $title-bar-height: 40px;
-$animTime: .3s;
+$animTime: .5s;
 
 .wrap {
   position: absolute;
@@ -126,7 +126,7 @@ $animTime: .3s;
   @include transition-timing-function(ease-out);
 
   >.content{
-    margin-top: $title-bar-height;
+
     background: #fff;
     height: 100%;
   }
@@ -197,9 +197,14 @@ $animTime: .3s;
 
   border-right: 1px solid #CDD5DF;
   width: 100%;
-  height: 100%;
+  margin-top: $title-bar-height;
+  top: 0;
+  bottom: 0;
+  padding: 25px;
   position: absolute;
   display: block;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 
   -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) $animTime;
   -moz-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) $animTime;
