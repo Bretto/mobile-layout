@@ -1,41 +1,290 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 4, ../sass/base.scss */
+/* line 45, ../sass/base.scss */
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* iPads (landscape) ----------- */
-/* iPads (portrait) ----------- */
-/* line 36, ../sass/screen.scss */
+/* line 51, ../sass/base.scss */
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #808080;
 }
 
-/* line 47, ../sass/screen.scss */
+/* iPads (landscape) ----------- */
+/* iPads (portrait) ----------- */
+/* line 106, ../sass/base.scss */
+.toggle-view-btn {
+  height: 30px;
+  padding: 7px;
+}
+/* line 110, ../sass/base.scss */
+.toggle-view-btn.active {
+  background: red;
+}
+/* line 114, ../sass/base.scss */
+.toggle-view-btn .icon-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 2px;
+  background-color: #f5f5f5;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* line 2, ../sass/page.scss */
+.page {
+  border-right: 1px solid #CDD5DF;
+  width: 100%;
+  margin-top: 40px;
+  top: 0;
+  bottom: 0;
+  padding: 25px;
+  position: absolute;
+  display: block;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+  -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+  overflow-x: hidden;
+}
+/* line 22, ../sass/page.scss */
+.page.page-enter {
+  left: 100%;
+}
+/* line 26, ../sass/page.scss */
+.page.page-enter.page-enter-active {
+  left: 0;
+}
+/* line 30, ../sass/page.scss */
+.page.page-leave {
+  left: 0;
+}
+/* line 34, ../sass/page.scss */
+.page.page-leave.page-leave-active {
+  left: -100%;
+}
+/* line 39, ../sass/page.scss */
+.page > .inner {
+  padding: 20px;
+}
+/* line 46, ../sass/page.scss */
+.page .title {
+  height: 70px;
+  border-bottom: 1px solid #ddd;
+}
+/* line 50, ../sass/page.scss */
+.page .title img {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* line 57, ../sass/page.scss */
+.page .content {
+  padding: 25px;
+}
+/* line 60, ../sass/page.scss */
+.page .content img {
+  margin-right: 100px;
+}
+/* line 65, ../sass/page.scss */
+.page section {
+  margin-bottom: 50px;
+  padding-top: 25px;
+}
+/* line 70, ../sass/page.scss */
+.page .group {
+  padding: 5px 25px 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 85, ../sass/page.scss */
+.page .model {
+  background-color: rgba(241, 196, 15, 0.1);
+  border: rgba(241, 196, 15, 0.2) solid 1px;
+}
+/* line 88, ../sass/page.scss */
+.page .model h2 {
+  color: rgba(243, 156, 18, 0.5);
+}
+/* line 91, ../sass/page.scss */
+.page .model h3, .page .model h4 {
+  color: #f39c12;
+}
+/* line 96, ../sass/page.scss */
+.page .view {
+  background-color: rgba(52, 152, 219, 0.1);
+  border: rgba(52, 152, 219, 0.2) solid 1px;
+}
+/* line 99, ../sass/page.scss */
+.page .view h2 {
+  color: rgba(41, 128, 185, 0.5);
+}
+/* line 102, ../sass/page.scss */
+.page .view h3, .page .view h4 {
+  color: #2980b9;
+}
+/* line 107, ../sass/page.scss */
+.page .controller {
+  background-color: rgba(26, 188, 156, 0.1);
+  border: rgba(26, 188, 156, 0.2) solid 1px;
+}
+/* line 110, ../sass/page.scss */
+.page .controller h2 {
+  color: rgba(22, 160, 133, 0.5);
+}
+/* line 113, ../sass/page.scss */
+.page .controller h3, .page .controller h4 {
+  color: #16a085;
+}
+/* line 118, ../sass/page.scss */
+.page .me {
+  padding: 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background: rgba(26, 188, 156, 0.1);
+  color: #16a085;
+}
+/* line 125, ../sass/page.scss */
+.page .todo {
+  padding: 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background: rgba(231, 76, 60, 0.1);
+  color: #c0392b;
+}
+/* line 132, ../sass/page.scss */
+.page h1 {
+  margin: 0;
+  padding: 12px 25px;
+  color: #000000;
+}
+/* line 138, ../sass/page.scss */
+.page h2 {
+  margin-bottom: 0;
+}
+/* line 142, ../sass/page.scss */
+.page h2, .page h3, .page h4 {
+  color: #000;
+}
+/* line 146, ../sass/page.scss */
+.page p, .page li {
+  color: #777;
+}
+/* line 150, ../sass/page.scss */
+.page .breath {
+  margin: 30px 0;
+}
+/* line 160, ../sass/page.scss */
+.page ul a {
+  margin-bottom: 0;
+}
+/* line 166, ../sass/page.scss */
+.page table td, .page table th {
+  text-align: center;
+}
+/* line 173, ../sass/page.scss */
+.page .possi .text-left {
+  text-align: left;
+}
+/* line 177, ../sass/page.scss */
+.page .possi a {
+  margin-bottom: 0;
+  display: inline;
+}
+/* line 183, ../sass/page.scss */
+.page blockquote {
+  border-color: #3498db;
+  margin: 30px 0;
+}
+
+/* line 2, ../sass/pri-nav.scss */
+.nav {
+  margin-bottom: 0;
+}
+/* line 8, ../sass/pri-nav.scss */
+.nav ul {
+  list-style: none;
+  margin: 0;
+}
+/* line 13, ../sass/pri-nav.scss */
+.nav li {
+  cursor: hand;
+  cursor: pointer;
+}
+/* line 17, ../sass/pri-nav.scss */
+.nav .divider {
+  border-top: 1px solid #333;
+}
+/* line 21, ../sass/pri-nav.scss */
+.nav a {
+  display: block;
+  color: #999;
+  padding: 15px 25px;
+}
+/* line 27, ../sass/pri-nav.scss */
+.nav a:hover {
+  background: #333;
+}
+/* line 31, ../sass/pri-nav.scss */
+.nav a.active {
+  background: #3498db;
+  color: #ffffff;
+}
+
+/* line 40, ../sass/pri-nav.scss */
+.pri-nav {
+  width: 200px;
+  bottom: 0;
+  top: 0;
+}
+/* line 48, ../sass/pri-nav.scss */
+.pri-nav .brand a {
+  color: #fff;
+  font-size: 15px;
+}
+/* line 54, ../sass/pri-nav.scss */
+.pri-nav ul {
+  margin: 0;
+}
+/* line 58, ../sass/pri-nav.scss */
+.pri-nav li {
+  list-style: none;
+}
+
+/* line 7, ../sass/screen.scss */
 .wrap {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-/* line 53, ../sass/screen.scss */
+/* line 13, ../sass/screen.scss */
 .navigation {
   background: #eee;
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 280px;
+  width: 200px;
   z-index: 0;
 }
-/* line 65, ../sass/screen.scss */
+/* line 25, ../sass/screen.scss */
 .navigation .content {
   width: 100%;
   top: 0;
@@ -44,7 +293,7 @@ html, body {
   position: absolute;
 }
 @media only screen and (orientation: portrait) {
-  /* line 53, ../sass/screen.scss */
+  /* line 13, ../sass/screen.scss */
   .navigation {
     z-index: 1;
     display: none;
@@ -52,7 +301,7 @@ html, body {
     bottom: 50px;
     left: 10px;
   }
-  /* line 85, ../sass/screen.scss */
+  /* line 45, ../sass/screen.scss */
   .navigation.active {
     display: block;
     -webkit-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
@@ -60,8 +309,8 @@ html, body {
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
   }
 }
-/* line 91, ../sass/screen.scss */
-.navigation header {
+/* line 83, ../sass/base.scss */
+.navigation > header {
   height: 40px;
   position: absolute;
   width: 100%;
@@ -69,12 +318,12 @@ html, body {
   border-bottom: 1px solid #2d3642;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#b0bccd), color-stop(0.5, #889bb3), color-stop(0.5, #8195af), to(#6d84a2));
 }
-/* line 99, ../sass/screen.scss */
-.navigation header .inner {
+/* line 91, ../sass/base.scss */
+.navigation > header .inner {
   padding: 3px;
 }
-/* line 103, ../sass/screen.scss */
-.navigation header h1 {
+/* line 95, ../sass/base.scss */
+.navigation > header h1 {
   color: #ffffff;
   font-size: 17px;
   text-align: center;
@@ -82,7 +331,7 @@ html, body {
   margin: 0;
 }
 
-/* line 113, ../sass/screen.scss */
+/* line 55, ../sass/screen.scss */
 .main {
   position: fixed;
   top: 0;
@@ -109,24 +358,24 @@ html, body {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 128, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 .main > .content {
   background: #fff;
   height: 100%;
 }
 @media only screen and (orientation: landscape) {
-  /* line 136, ../sass/screen.scss */
+  /* line 78, ../sass/screen.scss */
   .main.minimized {
-    margin-left: 280px;
+    margin-left: 200px;
   }
 }
 @media only screen and (orientation: portrait) {
-  /* line 113, ../sass/screen.scss */
+  /* line 55, ../sass/screen.scss */
   .main {
     margin-left: 0;
   }
 }
-/* line 145, ../sass/screen.scss */
+/* line 83, ../sass/base.scss */
 .main > header {
   height: 40px;
   position: absolute;
@@ -135,81 +384,15 @@ html, body {
   border-bottom: 1px solid #2d3642;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#b0bccd), color-stop(0.5, #889bb3), color-stop(0.5, #8195af), to(#6d84a2));
 }
-/* line 153, ../sass/screen.scss */
+/* line 91, ../sass/base.scss */
+.main > header .inner {
+  padding: 3px;
+}
+/* line 95, ../sass/base.scss */
 .main > header h1 {
   color: #ffffff;
   font-size: 17px;
   text-align: center;
   line-height: 33px;
   margin: 0;
-}
-/* line 161, ../sass/screen.scss */
-.main > header .inner {
-  padding: 3px;
-}
-
-/* line 169, ../sass/screen.scss */
-.toggle-view-btn {
-  height: 30px;
-  padding: 7px;
-}
-/* line 173, ../sass/screen.scss */
-.toggle-view-btn.active {
-  background: red;
-}
-/* line 177, ../sass/screen.scss */
-.toggle-view-btn .icon-bar {
-  display: block;
-  width: 18px;
-  height: 2px;
-  margin: 2px;
-  background-color: #f5f5f5;
-  -webkit-border-radius: 1px;
-  -moz-border-radius: 1px;
-  border-radius: 1px;
-  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
-}
-
-/* line 195, ../sass/screen.scss */
-.page {
-  border-right: 1px solid #CDD5DF;
-  width: 100%;
-  margin-top: 40px;
-  top: 0;
-  bottom: 0;
-  padding: 25px;
-  position: absolute;
-  display: block;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
-  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
-  -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
-  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
-}
-/* line 214, ../sass/screen.scss */
-.page > .inner {
-  padding: 20px;
-}
-
-/* line 228, ../sass/screen.scss */
-.repeat-enter {
-  left: 100%;
-}
-
-/* line 234, ../sass/screen.scss */
-.repeat-enter.repeat-enter-active {
-  left: 0;
-}
-
-/* line 240, ../sass/screen.scss */
-.repeat-leave {
-  left: 0;
-}
-
-/* line 245, ../sass/screen.scss */
-.repeat-leave.repeat-leave-active {
-  left: -100%;
 }

@@ -1,48 +1,8 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-
 @import "base";
+@import "page";
+@import "pri-nav";
 
 
-
-/* iPads (landscape) ----------- */
-//  @media only screen
-//  and (min-device-width : 768px)
-//  and (max-device-width : 1024px)
-//  and (orientation : landscape) {
-//}
-
-/* iPads (portrait) ----------- */
-//@media only screen
-//and (min-device-width : 768px)
-//and (max-device-width : 1024px)
-//and (orientation : portrait) {
-//}
-
-
-@mixin respond-to($media) {
-  @if $media == landscape {
-    @media only screen and (orientation: landscape) { @content; }
-  }
-  @else if $media == portrait {
-    @media only screen and (orientation: portrait) { @content; }
-  }
-}
-
-
-
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #808080;
-}
-
-$navigation-width: 280px;
-$title-bar-height: 40px;
-$animTime: .5s;
 
 .wrap {
   position: absolute;
@@ -57,7 +17,7 @@ $animTime: .5s;
   top: 0;
   bottom: 0;
 
-  width: $navigation-width;
+  width: $pri-nav-width;
 
 
   z-index: 0;
@@ -88,26 +48,8 @@ $animTime: .5s;
     }
   }
 
-  header{
-    height: $title-bar-height;
-    position: absolute;
-    width: 100%;
-    border-top: 1px solid #CDD5DF;
-    border-bottom: 1px solid #2d3642;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#b0bccd), color-stop(0.5, #889bb3), color-stop(0.5, #8195af), to(#6d84a2));
+  @include topbar;
 
-    .inner{
-      padding: 3px;
-    }
-
-    h1{
-      color: #ffffff;
-      font-size: 17px;
-      text-align: center;
-      line-height: 33px;
-      margin: 0;
-    }
-  }
 }
 
 .main {
@@ -134,7 +76,7 @@ $animTime: .5s;
   @include respond-to(landscape) {
 
     &.minimized{
-      margin-left: $navigation-width;
+      margin-left: $pri-nav-width;
     }
   }
 
@@ -142,109 +84,13 @@ $animTime: .5s;
     margin-left:0;
   }
 
-  >header{
-    height: $title-bar-height;
-    position: absolute;
-    width: 100%;
-    border-top: 1px solid #CDD5DF;
-    border-bottom: 1px solid #2d3642;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#b0bccd), color-stop(0.5, #889bb3), color-stop(0.5, #8195af), to(#6d84a2));
-
-    h1{
-      color: #ffffff;
-      font-size: 17px;
-      text-align: center;
-      line-height: 33px;
-      margin: 0;
-    }
-
-    .inner{
-      padding: 3px;
-    }
-
-
-  }
-}
-
-.toggle-view-btn{
-  height: 30px;
-  padding: 7px;
-
-  &.active{
-    background: red ;
-  }
-
-  .icon-bar {
-    display: block;
-    width: 18px;
-    height: 2px;
-    margin: 2px;
-    background-color: #f5f5f5;
-    -webkit-border-radius: 1px;
-    -moz-border-radius: 1px;
-    border-radius: 1px;
-    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
-    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
-  }
-
-
-}
-
-
-.page{
-
-
-  border-right: 1px solid #CDD5DF;
-  width: 100%;
-  margin-top: $title-bar-height;
-  top: 0;
-  bottom: 0;
-  padding: 25px;
-  position: absolute;
-  display: block;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-
-  -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) $animTime;
-  -moz-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) $animTime;
-  -o-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) $animTime;
-  transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) $animTime;
-
-  >.inner{
-    padding: 20px;
-  }
-
-
-  h1{
-
-  }
+  @include topbar;
 }
 
 
 
 
 
-.repeat-enter {
-  //opacity: 0;
-  //height: 0;
-  left: 100%;
-}
 
-.repeat-enter.repeat-enter-active {
-  //opacity: 1;
-  left: 0;
- // height: $annoceHeight;
-}
 
-.repeat-leave {
-  //opacity: 1;
-  left: 0;
-}
-
-.repeat-leave.repeat-leave-active {
-  //opacity: 0;
-  left: -100%;
- // height: 0;
-}
 
