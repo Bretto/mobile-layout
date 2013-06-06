@@ -19,38 +19,23 @@ html, body {
   color: #808080;
 }
 
-/* line 45, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
 .wrap {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-/* line 51, ../sass/screen.scss */
+/* line 53, ../sass/screen.scss */
 .navigation {
   background: #eee;
   position: absolute;
   top: 0;
   bottom: 0;
   width: 280px;
-  -webkit-transition-property: opacity;
-  -moz-transition-property: opacity;
-  -ms-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -ms-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-out;
-  -moz-transition-timing-function: ease-out;
-  -ms-transition-timing-function: ease-out;
-  -o-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
   z-index: 0;
 }
-/* line 66, ../sass/screen.scss */
+/* line 65, ../sass/screen.scss */
 .navigation .content {
   width: 100%;
   top: 0;
@@ -59,7 +44,7 @@ html, body {
   position: absolute;
 }
 @media only screen and (orientation: portrait) {
-  /* line 51, ../sass/screen.scss */
+  /* line 53, ../sass/screen.scss */
   .navigation {
     z-index: 1;
     display: none;
@@ -67,7 +52,7 @@ html, body {
     bottom: 50px;
     left: 10px;
   }
-  /* line 86, ../sass/screen.scss */
+  /* line 85, ../sass/screen.scss */
   .navigation.active {
     display: block;
     -webkit-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
@@ -75,7 +60,7 @@ html, body {
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
   }
 }
-/* line 92, ../sass/screen.scss */
+/* line 91, ../sass/screen.scss */
 .navigation header {
   height: 40px;
   position: absolute;
@@ -84,11 +69,11 @@ html, body {
   border-bottom: 1px solid #2d3642;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#b0bccd), color-stop(0.5, #889bb3), color-stop(0.5, #8195af), to(#6d84a2));
 }
-/* line 100, ../sass/screen.scss */
+/* line 99, ../sass/screen.scss */
 .navigation header .inner {
   padding: 3px;
 }
-/* line 104, ../sass/screen.scss */
+/* line 103, ../sass/screen.scss */
 .navigation header h1 {
   color: #ffffff;
   font-size: 17px;
@@ -97,81 +82,80 @@ html, body {
   margin: 0;
 }
 
-/* line 114, ../sass/screen.scss */
+/* line 113, ../sass/screen.scss */
 .main {
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  overflow: hidden;
   -webkit-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
   -webkit-transition-property: margin-left;
   -moz-transition-property: margin-left;
-  -ms-transition-property: margin-left;
   -o-transition-property: margin-left;
   transition-property: margin-left;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -ms-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
   -webkit-transition-timing-function: ease-out;
   -moz-transition-timing-function: ease-out;
-  -ms-transition-timing-function: ease-out;
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 129, ../sass/screen.scss */
-.main .content {
+/* line 128, ../sass/screen.scss */
+.main > .content {
+  margin-top: 40px;
   background: #fff;
   height: 100%;
 }
 @media only screen and (orientation: landscape) {
-  /* line 138, ../sass/screen.scss */
+  /* line 136, ../sass/screen.scss */
   .main.minimized {
     margin-left: 280px;
   }
 }
 @media only screen and (orientation: portrait) {
-  /* line 114, ../sass/screen.scss */
+  /* line 113, ../sass/screen.scss */
   .main {
     margin-left: 0;
   }
 }
-/* line 147, ../sass/screen.scss */
-.main header {
+/* line 145, ../sass/screen.scss */
+.main > header {
   height: 40px;
-  position: relative;
+  position: absolute;
   width: 100%;
   border-top: 1px solid #CDD5DF;
   border-bottom: 1px solid #2d3642;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#b0bccd), color-stop(0.5, #889bb3), color-stop(0.5, #8195af), to(#6d84a2));
 }
-/* line 155, ../sass/screen.scss */
-.main header h1 {
+/* line 153, ../sass/screen.scss */
+.main > header h1 {
   color: #ffffff;
   font-size: 17px;
   text-align: center;
   line-height: 33px;
   margin: 0;
 }
-/* line 163, ../sass/screen.scss */
-.main header .inner {
+/* line 161, ../sass/screen.scss */
+.main > header .inner {
   padding: 3px;
 }
 
-/* line 171, ../sass/screen.scss */
+/* line 169, ../sass/screen.scss */
 .toggle-view-btn {
   height: 30px;
   padding: 7px;
 }
-/* line 175, ../sass/screen.scss */
+/* line 173, ../sass/screen.scss */
 .toggle-view-btn.active {
   background: red;
 }
-/* line 179, ../sass/screen.scss */
+/* line 177, ../sass/screen.scss */
 .toggle-view-btn .icon-bar {
   display: block;
   width: 18px;
@@ -184,4 +168,41 @@ html, body {
   -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* line 195, ../sass/screen.scss */
+.page {
+  border-right: 1px solid #CDD5DF;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+  -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+}
+/* line 209, ../sass/screen.scss */
+.page > .inner {
+  padding: 20px;
+}
+
+/* line 223, ../sass/screen.scss */
+.repeat-enter {
+  left: 100%;
+}
+
+/* line 229, ../sass/screen.scss */
+.repeat-enter.repeat-enter-active {
+  left: 0;
+}
+
+/* line 235, ../sass/screen.scss */
+.repeat-leave {
+  left: 0;
+}
+
+/* line 240, ../sass/screen.scss */
+.repeat-leave.repeat-leave-active {
+  left: -100%;
 }

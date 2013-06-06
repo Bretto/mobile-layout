@@ -10,7 +10,7 @@
     <section class="navigation" ng-class="{active:dataModel.toggleViewOpen}">
         <header>
             <div class="inner">
-                <h1>Title</h1>
+                <h1>Navigation</h1>
             </div>
         </header>
         <div class="content">
@@ -18,9 +18,20 @@
                 <li data-ng-repeat="page in dataModel.pages"><a href="#/page/{{$index+1}}">{{page.title}}</a></li>
             </ul>
         </div>
-
     </section>
-    <div ng-view></div>
+    <section class="main" ng-class="{minimized:dataModel.toggleViewOpen}">
+        <header>
+            <div class="inner">
+                <button type="button" data-ng-click="dataModel.toggleViewOpen=!dataModel.toggleViewOpen" class="btn btn-inverse toggle-view-btn pull-left" ng-class="{active:dataModel.toggleViewOpen}">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1>Main View</h1>
+            </div>
+        </header>
+        <div ng-view class="content" data-ng-animate="'repeat'"></div>
+    </section>
 </div>
 
 
