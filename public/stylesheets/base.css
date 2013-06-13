@@ -10,19 +10,27 @@ html, body {
   margin: 0;
   padding: 0;
 }
+/* line 56, ../sass/base.scss */
+html a:hover, body a:hover {
+  text-decoration: none;
+}
+/* line 59, ../sass/base.scss */
+html a:focus, body a:focus {
+  text-decoration: none;
+}
+/* line 62, ../sass/base.scss */
+html a:active, body a:active {
+  text-decoration: none;
+}
 
 /* iPads (landscape) ----------- */
 /* iPads (portrait) ----------- */
-/* line 106, ../sass/base.scss */
+/* line 134, ../sass/base.scss */
 .toggle-view-btn {
   height: 30px;
   padding: 7px;
 }
-/* line 110, ../sass/base.scss */
-.toggle-view-btn.active {
-  background: red;
-}
-/* line 114, ../sass/base.scss */
+/* line 142, ../sass/base.scss */
 .toggle-view-btn .icon-bar {
   display: block;
   width: 18px;
@@ -35,4 +43,15 @@ html, body {
   -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* line 158, ../sass/base.scss */
+.ref {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  left: 2px;
+  right: 2px;
+  top: 2px;
+  height: 18px;
+  pointer-events: none;
 }

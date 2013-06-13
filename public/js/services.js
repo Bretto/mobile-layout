@@ -6,8 +6,13 @@ services.factory('DataModel', function ($http, $log, $rootScope, $routeParams, $
 
     var dataModel = {};
     dataModel.toggleViewOpen = true;
-    dataModel.pages = [{title:'Page: 1'}, {title:'Page: 2'}, {title:'Page: 3'}, {title:'Page: 4'}, {title:'Page: 5'}];
+    dataModel.sideNav = [];
+    dataModel.currentPage = {};
 
+
+    dataModel.isPriNavActive = function(value){
+        return ( '/'+value === $location.path() )? 'active' : '';
+    }
 
     return dataModel;
 });

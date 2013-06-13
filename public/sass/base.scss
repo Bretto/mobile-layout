@@ -51,6 +51,18 @@ $animTime: .5s;
 html, body {
   margin: 0;
   padding: 0;
+
+  a{
+    &:hover{
+      text-decoration: none;
+    }
+    &:focus{
+      text-decoration: none;
+    }
+    &:active{
+      text-decoration: none;
+    }
+  }
 }
 
 
@@ -84,12 +96,14 @@ html, body {
     height: $title-bar-height;
     position: absolute;
     width: 100%;
-    border-top: 1px solid #CDD5DF;
-    border-bottom: 1px solid #2d3642;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#b0bccd), color-stop(0.5, #889bb3), color-stop(0.5, #8195af), to(#6d84a2));
+    border-top: 1px solid $silver;
+    border-bottom: 1px solid $midnightblue;
+    //background-image: -webkit-gradient(linear, left top, left bottom, from(#b0bccd), color-stop(0.5, #889bb3), color-stop(0.5, #8195af), to(#6d84a2));
+    background: $midnightblue;
 
     .inner{
       padding: 3px;
+
     }
 
     h1{
@@ -99,8 +113,22 @@ html, body {
       line-height: 33px;
       margin: 0;
     }
+
+
+    &:before{
+      content: "";
+      position: absolute;
+      background: rgba(#fff,.2);
+      left: 2px;
+      right: 2px;
+      top: 2px;
+      height: 18px;
+      pointer-events:none;
+    }
   }
+
 }
+
 
 
 .toggle-view-btn{
@@ -108,7 +136,7 @@ html, body {
   padding: 7px;
 
   &.active{
-    background: red ;
+    //background: red ;
   }
 
   .icon-bar {
@@ -127,4 +155,12 @@ html, body {
 
 }
 
-
+.ref{
+  position: absolute;
+  background: rgba(#fff,.2);
+  left: 2px;
+  right: 2px;
+  top: 2px;
+  height: 18px;
+  pointer-events:none;
+}
