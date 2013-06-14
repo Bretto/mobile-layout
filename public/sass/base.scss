@@ -39,13 +39,22 @@ $asbestos: #7f8c8d;
 
 $pri-nav-width: 200px;
 $title-bar-height: 40px;
-$animTime: .5s;
+$animTime: .2s;
 
 
 *{
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+
+
+
+
+  //-webkit-transform: translate3d(0, 0, 0);
+  //-moz-transform: translate3d(0, 0, 0);
+  //-ms-transform: translate3d(0, 0, 0);
+  //transform: translate3d(0, 0, 0);
+
 }
 
 html, body {

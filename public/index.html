@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html ng-app="App">
+<html ng-app="App" manifest="etude-mobile.appcache">
 <head>
     <title></title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel='stylesheet' href='stylesheets/bootstrap.css'/>
     <link rel='stylesheet' href='stylesheets/screen.css'/>
+
+    <!-- iPad (portrait) SPLASHSCREEN-->
+    <link href="apple-touch-startup-image-768x1004.png" media="(device-width: 768px) and (orientation: portrait)" rel="apple-touch-startup-image">
+    <!-- iPad (landscape) SPLASHSCREEN-->
+    <link href="apple-touch-startup-image-748x1024.png" media="(device-width: 768px) and (orientation: landscape)" rel="apple-touch-startup-image">
 </head>
 <body>
 <div class="wrap" data-ng-controller="MainCtrl">
     <section class="navigation" ng-class="{active:dataModel.toggleViewOpen}">
         <header>
             <div class="inner">
-                <h1>Navigation</h1>
+                <h1>Navigation v4</h1>
             </div>
         </header>
         <div class="content">
