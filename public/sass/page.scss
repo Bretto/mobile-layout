@@ -1,19 +1,37 @@
 
+*{
+
+}
+
 .page{
 
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: translate3d(0,0,0);
   -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
+  visibility:visible;
+
+  //overflow: hidden;
+  //-webkit-backface-visibility: hidden;
+  //-webkit-perspective: 1000;
+
+  //-webkit-transform: translateZ(0);
+  //-moz-transform: translateZ(0);
+  //-ms-transform: translateZ(0);
+  //transform: translateZ(0);
+  //
+  //
+  //-webkit-transform: translate3d(0, 0, 0);
+  //-moz-transform: translate3d(0, 0, 0);
+  //-ms-transform: translate3d(0, 0, 0);
+  //transform: translate3d(0, 0, 0);
 
 
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+  //border-right: 1px solid #CDD5DF;
 
+  background: #fff;
 
-  border-right: 1px solid #CDD5DF;
   width: 100%;
   margin-top: $title-bar-height;
   top: 0;
@@ -21,8 +39,10 @@
   //padding: 25px;
   position: absolute;
   display: block;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
+
+  //overflow: scroll;
+  //-webkit-overflow-scrolling: touch;
+
 
   -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) $animTime;
   -moz-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) $animTime;
@@ -32,18 +52,23 @@
 
   &.page-enter {
     left: 100%;
+    //overflow: hidden;
   }
 
   &.page-enter.page-enter-active {
     left: 0;
+    //overflow: hidden;
   }
 
   &.page-leave {
     left: 0;
+    //overflow: hidden;
   }
 
   &.page-leave.page-leave-active {
-    left: -100%;
+    //left: -100%;
+    //display: none;
+    //overflow: hidden;
   }
 
 

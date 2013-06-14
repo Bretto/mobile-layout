@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('App', ['App.filters', 'App.services', 'App.directives', 'App.controllers', 'ui', 'ui.bootstrap']).
+var app = angular.module('App', ['App.filters', 'App.services', 'App.directives', 'App.controllers']).
     config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
         $routeProvider.
             when('/requirement', {templateUrl:'partials/requirement.html'}).

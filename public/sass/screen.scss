@@ -54,16 +54,28 @@
 
 .main {
 
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: translate3d(0,0,0);
   -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
+  visibility:visible;
 
+  overflow: hidden;
 
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+  //-webkit-backface-visibility: hidden;
+  //-webkit-perspective: 1000;
+
+  //-webkit-transform: translateZ(0);
+  //-moz-transform: translateZ(0);
+  //-ms-transform: translateZ(0);
+  //transform: translateZ(0);
+  //
+  //
+  //-webkit-transform: translate3d(0, 0, 0);
+  //-moz-transform: translate3d(0, 0, 0);
+  //-ms-transform: translate3d(0, 0, 0);
+  //transform: translate3d(0, 0, 0);
 
   position: fixed;
   top: 0;
@@ -76,18 +88,28 @@
 
   @include transition-property(margin-left);
   @include transition-duration($animTime);
-  @include transition-timing-function(ease-out);
+  @include transition-timing-function(cubic-bezier(0.250, 0.460, 0.450, 0.940));
+
 
   >.content{
-
+    overflow: hidden;
     background: #fff;
     height: 100%;
   }
 
   @include respond-to(landscape) {
 
+    .page{
+      width: 824px;
+    }
+
     &.minimized{
       margin-left: $pri-nav-width;
+
+      .page{
+        //width: 824px;
+      }
+
     }
   }
 
