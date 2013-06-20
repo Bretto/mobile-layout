@@ -1,9 +1,23 @@
 
+.nav-wrap{
+  height: 100%;
+}
+
 .nav{
 
-  //position: fixed;
+  overflow: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+
   margin-bottom: 0;
-  //margin-top: $title-bar-height;
+  margin-top: 40px;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  overflow: scroll;
+  overflow-x: hidden;
+
 
   ul{
     list-style: none;
@@ -20,7 +34,7 @@
 
   a{
     display: block;
-    color: #999;
+    color: $asbestos;
     padding: 15px 25px;
 
 
@@ -31,6 +45,9 @@
     &.active{
       background: $wetasphalt;
       color: #ffffff;
+
+
+      @include text-shadow(#000 0 1px 0);
     }
   }
 
@@ -39,25 +56,34 @@
 
 .pri-nav{
 
+
   width: $pri-nav-width;
-  //background: #191818;
-  bottom: 0;
-  top: 0;
+
 
   .brand{
+    display: none;
     a{
       color: #fff;
       font-size: 15px;
     }
   }
 
+  .divider {
+    border-top: 0;
+  }
+
+
   ul{
     margin: 0;
+    //height: 710px;
   }
 
   li{
+
+    @include text-shadow(#ffffff 0 1px 0);
+
     list-style: none;
-    border-top: 1px solid #fff;
+    //border-top: 1px solid rgba(#fff, 0);
     border-bottom: 1px solid #ddd;
   }
 

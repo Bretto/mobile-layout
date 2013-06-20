@@ -10,24 +10,20 @@
   height: 100%;
 }
 
+
+
 .navigation {
 
   background: #eee;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
 
   width: $pri-nav-width;
-
-
-  z-index: 0;
+  //z-index: 10;
   
   .content{
-    width: 100%;
-    top: 0;
-    bottom: 0;
-    margin-top: $title-bar-height;
-    position: absolute;
+    height: 100%;
   }
 
   @include respond-to(landscape) {
@@ -35,47 +31,34 @@
   }
 
   @include respond-to(portrait) {
-    z-index: 1;
-    display: none;
-    top: 50px;
-    bottom: 50px;
-    left: 10px;
-
 
     &.active{
-      display: block;
-      @include box-shadow(0 0 10px 5px rgba(#000,.2));
+
     }
   }
 
   @include topbar;
 
+  &:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events:none;
+    @include box-shadow(-5px 0 10px -5px rgba(#000,1) inset);
+  }
 }
 
 .main {
 
-  -webkit-perspective: 1000;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform-style: preserve-3d;
-  -webkit-transform: translate3d(0,0,0);
-  -webkit-transform: translateZ(0);
-  visibility:visible;
-
-  overflow: hidden;
-
-  //-webkit-backface-visibility: hidden;
   //-webkit-perspective: 1000;
+  //-webkit-backface-visibility: hidden;
+  //-webkit-transform-style: preserve-3d;
+  //visibility:visible;
 
-  //-webkit-transform: translateZ(0);
-  //-moz-transform: translateZ(0);
-  //-ms-transform: translateZ(0);
-  //transform: translateZ(0);
-  //
-  //
-  //-webkit-transform: translate3d(0, 0, 0);
-  //-moz-transform: translate3d(0, 0, 0);
-  //-ms-transform: translate3d(0, 0, 0);
-  //transform: translate3d(0, 0, 0);
+
 
   position: fixed;
   top: 0;
@@ -84,41 +67,60 @@
   right: 0;
   overflow: hidden;
 
-  @include box-shadow(0 0 10px 5px rgba(#000,.2));
 
-  @include transition-property(margin-left);
-  @include transition-duration($animTime);
-  @include transition-timing-function(cubic-bezier(0.250, 0.460, 0.450, 0.940));
+
+  //@include transition-property(translate3d);
+  //@include transition-duration($animTime);
+  //@include transition-timing-function(cubic-bezier(0.250, 0.460, 0.450, 0.940));
+  //
+  //-webkit-transform: translate3d(0,0,0);
+
+  @include transition(-webkit-transform cubic-bezier(0.250, 0.460, 0.450, 0.940) $animTime);
 
 
   >.content{
-    overflow: hidden;
+    //overflow: hidden;
     background: #fff;
     height: 100%;
   }
 
+
+
   @include respond-to(landscape) {
 
     .page{
-      width: 824px;
+      //width: 1024px;
     }
 
     &.minimized{
-      margin-left: $pri-nav-width;
-
-      .page{
-        //width: 824px;
-      }
-
+      //margin-left: $pri-nav-width;
+      -webkit-transform: translate3d($pri-nav-width,0,0);
     }
   }
 
   @include respond-to(portrait) {
-    margin-left:0;
+
+    .page{
+      //width: 768px;
+    }
+
+
+
+    &.minimized{
+      //margin-left: $pri-nav-width;
+      -webkit-transform: translate3d($pri-nav-width,0,0);
+    }
+
   }
 
   @include topbar;
 }
 
-
+.noanimate {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+}
 

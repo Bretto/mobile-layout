@@ -5,32 +5,32 @@
   box-sizing: border-box;
 }
 
-/* line 60, ../sass/base.scss */
+/* line 51, ../sass/base.scss */
 html, body {
   margin: 0;
   padding: 0;
 }
-/* line 65, ../sass/base.scss */
+/* line 56, ../sass/base.scss */
 html a:hover, body a:hover {
   text-decoration: none;
 }
-/* line 68, ../sass/base.scss */
+/* line 59, ../sass/base.scss */
 html a:focus, body a:focus {
   text-decoration: none;
 }
-/* line 71, ../sass/base.scss */
+/* line 62, ../sass/base.scss */
 html a:active, body a:active {
   text-decoration: none;
 }
 
 /* iPads (landscape) ----------- */
 /* iPads (portrait) ----------- */
-/* line 143, ../sass/base.scss */
+/* line 135, ../sass/base.scss */
 .toggle-view-btn {
   height: 30px;
   padding: 7px;
 }
-/* line 151, ../sass/base.scss */
+/* line 143, ../sass/base.scss */
 .toggle-view-btn .icon-bar {
   display: block;
   width: 18px;
@@ -45,7 +45,7 @@ html a:active, body a:active {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
 }
 
-/* line 167, ../sass/base.scss */
+/* line 159, ../sass/base.scss */
 .ref {
   position: absolute;
   background: rgba(255, 255, 255, 0.2);

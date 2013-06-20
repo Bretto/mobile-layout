@@ -5,30 +5,12 @@
 
 .page{
 
-  -webkit-perspective: 1000;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform-style: preserve-3d;
-  -webkit-transform: translate3d(0,0,0);
-  -webkit-transform: translateZ(0);
-  visibility:visible;
-
-  //overflow: hidden;
-  //-webkit-backface-visibility: hidden;
   //-webkit-perspective: 1000;
+  //-webkit-backface-visibility: hidden;
+  //-webkit-transform-style: preserve-3d;
+  //visibility:visible;
 
-  //-webkit-transform: translateZ(0);
-  //-moz-transform: translateZ(0);
-  //-ms-transform: translateZ(0);
-  //transform: translateZ(0);
-  //
-  //
-  //-webkit-transform: translate3d(0, 0, 0);
-  //-moz-transform: translate3d(0, 0, 0);
-  //-ms-transform: translate3d(0, 0, 0);
-  //transform: translate3d(0, 0, 0);
-
-
-  //border-right: 1px solid #CDD5DF;
+  //z-index: 2;
 
   background: #fff;
 
@@ -36,39 +18,31 @@
   margin-top: $title-bar-height;
   top: 0;
   bottom: 0;
-  //padding: 25px;
   position: absolute;
   display: block;
 
-  //overflow: scroll;
-  //-webkit-overflow-scrolling: touch;
+  overflow: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 
 
-  -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) $animTime;
-  -moz-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) $animTime;
-  -o-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) $animTime;
-  transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) $animTime;
+  @include transition(-webkit-transform cubic-bezier(0.250, 0.460, 0.450, 0.940) $animTime);
 
 
   &.page-enter {
-    left: 100%;
-    //overflow: hidden;
+    -webkit-transform: translate3d(100%,0,0);
   }
 
   &.page-enter.page-enter-active {
-    left: 0;
-    //overflow: hidden;
+    -webkit-transform: translate3d(1,0,0);
   }
 
   &.page-leave {
-    left: 0;
-    //overflow: hidden;
+    -webkit-transform: translate3d(1,0,0);
   }
 
   &.page-leave.page-leave-active {
-    //left: -100%;
-    //display: none;
-    //overflow: hidden;
+    -webkit-transform: translate3d(-100%,0,0);
   }
 
 
@@ -77,11 +51,13 @@
   }
 
 
-  overflow-x: hidden;
+
 
   .title {
     height: 70px;
     border-bottom: 1px solid #ddd;
+
+
 
     img {
       position: absolute;
@@ -92,6 +68,8 @@
 
   .content {
     padding: 25px;
+
+
 
     img{
       margin-right: 100px;
@@ -107,14 +85,6 @@
 
     padding: 5px 25px 20px;
     @include border-radius(5px);
-    //background-color: rgba($peterriver,.1);
-    //h2{
-    //  color: rgba($belizehole, .3);
-    //}
-    //h3, {
-    //  color: $belizehole;
-    //}
-    //@include box-shadow(inset 0 0 10px #ccc);
 
   }
 
@@ -185,11 +155,6 @@
 
   .breath{
     margin: 30px 0;
-  }
-
-  a {
-    //display: block;
-    //margin-bottom: 25px;
   }
 
   ul {

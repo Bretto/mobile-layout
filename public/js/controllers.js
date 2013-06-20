@@ -9,6 +9,16 @@ controllers.controller('MainCtrl', function ($scope, $rootScope, $timeout, $log,
 
     $scope.dataModel = DataModel;
 
+    $scope.swipeLeft = function(){
+        $log.info('swipeLeft');
+        DataModel.toggleViewOpen = false;
+    }
+
+    $scope.swipeRight = function(){
+        $log.info('swipeRight');
+        DataModel.toggleViewOpen = true;
+    }
+
 });
 
 
