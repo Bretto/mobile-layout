@@ -70,16 +70,27 @@ directives.directive('swipeNav', function ($swipe, $log, DataModel) {
                 if(swiping === 2){
                     main.removeClass('noanimate');
                     main.css("transform", "")
-                    var open, isAction;
+                    var isOpen = DataModel.toggleViewOpen;
+                    var isAction = false;
 
-                    isAction = (Math.abs(delta) > threshold)? true : false;
-
-                    if(isAction){
-                        open = !DataModel.toggleViewOpen;
+                    if(isOpen){
+                        if(delta < -threshold){
+                            isAction = true;
+                        }else{
+                            isAction = false;
+                        }
+                    }else{
+                        if(delta < threshold){
+                            isAction = false;
+                        }else{
+                            isAction = true;
+                        }
                     }
 
+                    isOpen = (isAction)? !isOpen: isOpen;
+
                     $scope.$apply(function() {
-                        DataModel.toggleViewOpen = open;
+                        DataModel.toggleViewOpen = isOpen;
                     });
 
                 }
