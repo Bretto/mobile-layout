@@ -38,7 +38,7 @@ $asbestos: #7f8c8d;
 
 
 $pri-nav-width: 200px;
-$title-bar-height: 40px;
+$title-bar-height: 42px;
 $animTime: .2s;
 
 
@@ -100,6 +100,10 @@ html, body {
     //border-bottom: 1px solid $midnightblue;
     //background-image: -webkit-gradient(linear, left top, left bottom, from(#b0bccd), color-stop(0.5, #889bb3), color-stop(0.5, #8195af), to(#6d84a2));
     background: $midnightblue;
+    box-shadow: 0 0 2px 2px rgba(#000, .5);
+    border-top: rgba(#fff, .2) solid 1px;
+    border-bottom: rgba(#fff, .4) solid 1px;
+    z-index: 1;
 
     .inner{
       padding: 3px;
@@ -108,9 +112,11 @@ html, body {
 
     h1{
       color: #ffffff;
+      @include text-shadow(#000 0 -1px 0);
       font-size: 17px;
       text-align: center;
       line-height: 33px;
+      //font-weight: 500;
       margin: 0;
     }
 
@@ -118,14 +124,16 @@ html, body {
     &:before{
       content: "";
       position: absolute;
-      background: rgba(#fff,.2);
-      left: 2px;
-      right: 2px;
-      top: 2px;
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(255,255,255,0)));
+      left: 1px;
+      right: 1px;
+      top: 1px;
       height: 18px;
       pointer-events:none;
 
     }
+
+
   }
 
 }
@@ -135,6 +143,8 @@ html, body {
 .toggle-view-btn{
   height: 30px;
   padding: 7px;
+  margin: 2px;
+  position: relative;
 
   &.active{
     //background: red ;

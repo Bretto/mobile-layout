@@ -25,12 +25,14 @@ html a:active, body a:active {
 
 /* iPads (landscape) ----------- */
 /* iPads (portrait) ----------- */
-/* line 135, ../sass/base.scss */
+/* line 143, ../sass/base.scss */
 .toggle-view-btn {
   height: 30px;
   padding: 7px;
+  margin: 2px;
+  position: relative;
 }
-/* line 143, ../sass/base.scss */
+/* line 153, ../sass/base.scss */
 .toggle-view-btn .icon-bar {
   display: block;
   width: 18px;
@@ -45,7 +47,7 @@ html a:active, body a:active {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
 }
 
-/* line 159, ../sass/base.scss */
+/* line 169, ../sass/base.scss */
 .ref {
   position: absolute;
   background: rgba(255, 255, 255, 0.2);

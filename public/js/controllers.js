@@ -4,20 +4,11 @@
 var controllers = angular.module('App.controllers', []);
 
 
-controllers.controller('MainCtrl', function ($scope, $rootScope, $timeout, $log, $http, DataModel) {
-    $log.info('MainCtrl');
+controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, $http, DataModel) {
+    $log.info('AppCtrl');
 
     $scope.dataModel = DataModel;
 
-    $scope.swipeLeft = function(){
-        $log.info('swipeLeft');
-        DataModel.toggleViewOpen = false;
-    }
-
-    $scope.swipeRight = function(){
-        $log.info('swipeRight');
-        DataModel.toggleViewOpen = true;
-    }
 
 });
 

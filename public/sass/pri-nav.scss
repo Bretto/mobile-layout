@@ -56,16 +56,13 @@
 
 .pri-nav{
 
+  background: $clouds;
 
   width: $pri-nav-width;
 
 
   .brand{
     display: none;
-    a{
-      color: #fff;
-      font-size: 15px;
-    }
   }
 
   .divider {
@@ -75,16 +72,25 @@
 
   ul{
     margin: 0;
+    margin-top: 20px;
     //height: 710px;
   }
 
   li{
 
-    @include text-shadow(#ffffff 0 1px 0);
 
+
+    @include text-shadow(#ffffff 0 1px 0);
+    background: #eee;
+    font-size: 15px;
     list-style: none;
-    //border-top: 1px solid rgba(#fff, 0);
+    border-top: 1px solid rgba(#fff, 1);
     border-bottom: 1px solid #ddd;
+
+    a{
+      color: $midnightblue;
+      font-size: 15px;
+    }
   }
 
 }

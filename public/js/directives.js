@@ -2,8 +2,6 @@
 
 var directives = angular.module('App.directives', []);
 
-
-
 directives.directive('swipeNav', function ($swipe, $log, DataModel) {
 
     function link($scope, element, attrs) {
@@ -12,7 +10,8 @@ directives.directive('swipeNav', function ($swipe, $log, DataModel) {
             startX = 0,
             startOffset  = 0,
             offset  = 0,
-            threshold = 300,
+            threshold = 200,
+            cnt = 0,
             main = $('.main');
 
 
@@ -29,7 +28,7 @@ directives.directive('swipeNav', function ($swipe, $log, DataModel) {
 
         $swipe.bind(main, {
             start: function(coords) {
-                $log.info('start:');
+//                $log.info('start:');
                 /* capture initial event position */
                 if (swiping === 0) {
                     swiping = 1;
@@ -40,6 +39,7 @@ directives.directive('swipeNav', function ($swipe, $log, DataModel) {
             },
             move: function (coords) {
                 $log.info('move:');
+//
                 /* follow cursor movement */
                 if (swiping===0) return;
 
@@ -50,16 +50,16 @@ directives.directive('swipeNav', function ($swipe, $log, DataModel) {
                 }
                 else if (swiping === 2) {
 
-                    // ratio is used for the 'rubber band' effect
-                    var ratio = 1;
-                    if ((coords.x > startX) || (coords.x < startX)){
-                        ratio = 3;
+                    var ratio = 3;
+
+                    offset = Math.round(startOffset + deltaX / ratio);
+
+                    // hack to prevent to many move-updates
+                    cnt ++;
+                    if(cnt > 2){
+                       main.css('-webkit-transform',  'translate3d(' + offset + 'px,0,0)');
+                       cnt = 0;
                     }
-
-                    offset = (startOffset + deltaX / ratio);
-
-                    main.css(getCSSProperty('transform',  'translate3d(' + offset + 'px,0,0)'))
-                        .addClass('noanimate');
                 }
             },
             end: function (coords) {
@@ -69,7 +69,7 @@ directives.directive('swipeNav', function ($swipe, $log, DataModel) {
 
                 if(swiping === 2){
                     main.removeClass('noanimate');
-                    main.css("transform", "")
+                    main.css("transform", "");
                     var isOpen = DataModel.toggleViewOpen;
                     var isAction = false;
 
